@@ -1,10 +1,11 @@
+CREATE TYPE status_enum AS ENUM ('confirmado', 'em andamento', 'cancelado', 'finalizado');
 CREATE TABLE "SERVICES"(
     "id" SERIAL NOT NULL,
     "beginDate" DATE NOT NULL,
-    "finishDate" DATE NOT NULL,
-    "status" BOOLEAN NOT NULL,
+    "finishDate" DATE NULL,
+    "status" status_enum NULL,
     "price" FLOAT(53) NOT NULL,
-    "comment" TEXT NULL,
+    "comment" TEXT NULL
     "createdAt" DATE NOT NULL
 );
 ALTER TABLE
