@@ -28,7 +28,7 @@ export class ControllerUser {
 
     public async editProfile(req: Request, res: Response) {
         const { id }: { id: number } = res.locals.user;
-        const user: Omit<Users,'id | createdAt'> = req.body;
+        const user: Omit<Users,'id | createdAt | password'> = req.body;
 
         await userService.editProfile(user, id);
 

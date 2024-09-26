@@ -5,7 +5,7 @@ import * as petService from "../service/ServicePet";
 export class ControllerPet {
     public async createNewPet(req: Request, res: Response) {
        try {
-            const pet: Omit<Pet,'id | userId | createdAt'> = req.body;
+            const pet: Omit<Pet,'id | userId | createdAt | birthDate'> = req.body;
             const { id }: { id: number } = res.locals.user;
             await petService.createPet(pet, id);
             return res.status(201).send("Pet criado com sucesso");
