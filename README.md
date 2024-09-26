@@ -1,12 +1,7 @@
 # <p align = "center">​🐶​ Familia Inu ​🐶​</p>
 
 <p align="center">
-   <img src="https://cdn.dribbble.com/users/5720644/screenshots/13912339/media/cfc570f6891e4aef4ae3c5282a767847.gif" width="600" height="400" object-fit="cover"/>
-</p>
-
-<p align = "center">
-   <img src="https://img.shields.io/badge/author-lucasmartinso-4dae71?style=flat-square" />
-   <img src="https://img.shields.io/github/languages/count/Vitorlealm/familia-inu-service-ts?color=4dae71&style=flat-square" />
+   <img src="https://drive.usercontent.google.com/download?id=1Mg-al7RfvzKu8OIxNf2ePu4EM-a0byfE&export=view&authuser=1" width="500" height="500" object-fit="cover"/>
 </p>
 
 
@@ -28,6 +23,56 @@ Colocar a descrição
 ## :rocket: Routes
 
 ### 👥 Users 
+
+```yml
+GET /user/profile (autentify)
+    - Route to get personal info
+    - headers: { "Authorization": `Bearer ${token}` }
+    - body:{}
+```
+    
+```yml 
+POST /signup
+    - Route to create acount on the plataform
+    - headers: {}
+    - body: {
+        "email": "lorem@domain.com",
+        "name": "lorem ipsum"
+        "number": "123456789",
+        "password": "**********"
+    }
+```
+
+```yml 
+POST /login
+    - Route to make the login to acess the CRUD
+    - headers: {}
+    - body: {
+        "email": "lorem@domain.com",
+        "password": "**********"
+    }
+```
+
+```yml 
+PUT /user/edit (autentify)
+    - Route to certify the user is logged to edit and acess sensitive CRUD info 
+    - headers: {  "Authorization": `Bearer ${token}` }
+    - body: {
+        "email": "lorem@domain.com",
+        "name": "lorem ipsum"
+        "number": "123456789",
+        "password": "**********"
+    }
+```
+
+```yml 
+DELETE /user/delete (autentify)
+    - Route to certify the user is logged to edit and acess sensitive CRUD info 
+    - headers: {  "Authorization": `Bearer ${token}` }
+    - body: {}
+```
+
+### 🐕 PETS 
 
 ```yml
 GET /user/profile (autentify)
